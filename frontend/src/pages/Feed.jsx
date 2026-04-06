@@ -17,7 +17,18 @@ export default function Feed() {
     const fetchPosts = async () => {
       try {
         const { data } = await api.get("/posts");
-        setPosts(data);
+        
+        // --- DEFENSIVE CHECK ---
+        // If data is directly the array, use it. 
+        // If it's wrapped in an object like { posts: [] }, extract it.
+        if (Array.isArray(data)) {
+          setPosts(data);
+        } else if (data && typeof data === "object" && Array.isArray(data.posts)) {
+          setPosts(data.posts);
+        } else {
+          setPosts([]); // Fallback to empty array to prevent map crashes
+        }
+        
       } catch (err) {
         if (err.response?.status === 401) {
           logout();
@@ -30,11 +41,11 @@ export default function Feed() {
       }
     };
     fetchPosts();
-  }, []);
+  }, [logout, navigate]);
 
   // Prepend new post without refetch
   const handlePostCreated = (newPost) => {
-    setPosts((prev) => [newPost, ...prev]);
+    setPosts((prev) => [newPost, ...(Array.isArray(prev) ? prev : [])]);
   };
 
   return (
@@ -93,13 +104,14 @@ export default function Feed() {
                       <div className="alert alert-danger" role="alert">{error}</div>
                     )}
 
-                    {!loading && !error && posts.length === 0 && (
+                    {!loading && !error && (!Array.isArray(posts) || posts.length === 0) && (
                       <div style={{ textAlign: "center", padding: "40px", color: "#888" }}>
                         No posts yet. Be the first to post something!
                       </div>
                     )}
 
-                    {posts.map((post) => (
+                    {/* --- DEFENSIVE RENDER --- */}
+                    {(Array.isArray(posts) ? posts : []).map((post) => (
                       <PostItem key={post._id} post={post} />
                     ))}
 
