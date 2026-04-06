@@ -11,6 +11,8 @@ app.use(express.json({ limit: "10mb" })); // 10mb limit for base64 images later
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/posts", require("./routes/postRoutes"));
+app.use("/api/comments", require("./routes/commentRoutes"));
 
 // Health check
 app.get("/", (req, res) => res.json({ message: "API is running" }));
