@@ -122,7 +122,7 @@ export default function Feed() {
                       <div className="_right_inner_area_info_ppl">
                         <div className="_right_inner_area_info_box">
                           <div className="_right_inner_area_info_box_image">
-                            <img src="assets/images/Avatar.png" alt="" className="_ppl_img" />
+                            <img src="/images/Avatar.png" alt="" className="_ppl_img" />
                           </div>
                           <div className="_right_inner_area_info_box_txt">
                             <h4 className="_right_inner_area_info_box_title">Suggested User</h4>

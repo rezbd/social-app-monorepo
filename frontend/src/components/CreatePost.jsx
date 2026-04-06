@@ -55,7 +55,7 @@ export default function CreatePost({ onPostCreated }) {
     <div className="_feed_inner_text_area _b_radious6 _padd_b24 _padd_t24 _padd_r24 _padd_l24 _mar_b16">
       <div className="_feed_inner_text_area_box">
         <div className="_feed_inner_text_area_box_image">
-          <img src="assets/images/txt_img.png" alt="" className="_txt_img" />
+          <img src="/images/txt_img.png" alt="" className="_txt_img" />
         </div>
         <div className="form-floating _feed_inner_text_area_box_form">
           <textarea

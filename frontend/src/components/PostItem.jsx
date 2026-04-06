@@ -81,7 +81,7 @@ function CommentItem({ comment: initialComment }) {
   return (
     <div className="_comment_main" style={{ marginTop: "16px" }}>
       <div className="_comment_image">
-        <img src="assets/images/txt_img.png" alt="" className="_comment_img1" />
+        <img src="/images/txt_img.png" alt="" className="_comment_img1" />
       </div>
       <div className="_comment_area" style={{ flex: 1 }}>
         <div className="_comment_details">
@@ -148,7 +148,7 @@ function CommentItem({ comment: initialComment }) {
         {/* Reply input */}
         {replyOpen && (
           <div style={{ display: "flex", gap: "8px", marginTop: "8px", alignItems: "flex-start" }}>
-            <img src="assets/images/comment_img.png" alt="" className="_comment_img"
+            <img src="/images/comment_img.png" alt="" className="_comment_img"
               style={{ width: "30px", height: "30px", borderRadius: "50%", marginTop: "4px" }} />
             <div style={{ flex: 1, position: "relative" }}>
               <textarea
@@ -189,7 +189,7 @@ function CommentItem({ comment: initialComment }) {
             {comment.replies.map((reply, i) => (
               <div key={reply._id || i} style={{ marginBottom: "8px" }}>
                 <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                  <img src="assets/images/txt_img.png" alt="" className="_comment_img1"
+                  <img src="/images/txt_img.png" alt="" className="_comment_img1"
                     style={{ width: "26px", height: "26px", borderRadius: "50%" }} />
                   <div>
                     <h4 className="_comment_name_title" style={{ fontSize: "13px", marginBottom: "2px" }}>
@@ -365,7 +365,7 @@ export default function PostItem({ post }) {
         <div className="_feed_inner_timeline_post_top">
           <div className="_feed_inner_timeline_post_box">
             <div className="_feed_inner_timeline_post_box_image">
-              <img src="assets/images/post_img.png" alt="" className="_post_img" />
+              <img src="/images/post_img.png" alt="" className="_post_img" />
             </div>
             <div className="_feed_inner_timeline_post_box_txt">
               <h4 className="_feed_inner_timeline_post_box_title">
@@ -489,7 +489,7 @@ export default function PostItem({ post }) {
           <div className="_feed_inner_comment_box_form">
             <div className="_feed_inner_comment_box_content">
               <div className="_feed_inner_comment_box_content_image">
-                <img src="assets/images/comment_img.png" alt="" className="_comment_img" />
+                <img src="/images/comment_img.png" alt="" className="_comment_img" />
               </div>
               <div className="_feed_inner_comment_box_content_txt">
                 <textarea

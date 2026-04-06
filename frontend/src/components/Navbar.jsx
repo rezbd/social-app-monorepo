@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="container _custom_container">
         <div className="_logo_wrap">
           <a className="navbar-brand" href="/feed">
-            <img src="assets/images/logo.svg" alt="Logo" className="_nav_logo" />
+            <img src="/images/logo.svg" alt="Logo" className="_nav_logo" />
           </a>
         </div>
         <button
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           <div className="_header_nav_profile">
             <div className="_header_nav_profile_image">
-              <img src="assets/images/profile.png" alt="Profile" className="_nav_profile_img" />
+              <img src="/images/profile.png" alt="Profile" className="_nav_profile_img" />
             </div>
             <div className="_header_nav_dropdown">
               <p className="_header_nav_para">
@@ -62,7 +62,7 @@ export default function Navbar() {
             <div className="_nav_profile_dropdown _profile_dropdown" id="_prfoile_drop">
               <div className="_nav_profile_dropdown_info">
                 <div className="_nav_profile_dropdown_image">
-                  <img src="assets/images/profile.png" alt="" className="_nav_drop_img" />
+                  <img src="/images/profile.png" alt="" className="_nav_drop_img" />
                 </div>
                 <div className="_nav_profile_dropdown_info_txt">
                   <h4 className="_nav_dropdown_title">
